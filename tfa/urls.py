@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from squirrel.views import index
+from squirrel.views import index ### function
 
 urlpatterns = [
     path('admin/', admin.site.urls),
