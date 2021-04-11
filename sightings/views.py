@@ -10,3 +10,9 @@ def map(request):
             'sightings':sightings,
             }
     return render(request, 'sightings/map.html', context)
+def list_sighting(request):
+    listing = Squirrel.objects.all()
+    context = {
+            'sighting': listing,
+        }
+    return render(request, 'sightings/sightings.html',context)
