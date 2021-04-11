@@ -2,14 +2,14 @@ from django.core.management.base import BaseCommand
 
 import csv
 
-from tracker.models import Sighting
+from sightings.models import Squirrel
 
 class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument('csv_file')
     def handle(self, *args, **options):
         dict_ = {} 
-        s = Sighting.objects.all()
+        s = Squirrel.objects.all()
         with open(options['csv_file'],"w") as fp:
             for i in s:
                 dict_['Longitude'] = i.lon
