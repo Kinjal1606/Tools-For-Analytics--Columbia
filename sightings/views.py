@@ -5,8 +5,8 @@ from sightings.models import Squirrel
 
 # Create your views here.
 def map(request):
-    sightings= Sighting.objects.all()[:100]
+    sightings= Squirrel.objects.all()[:100]
     context ={
             'sightings':sightings,
             }
-    return render(request, 'tracker/map.html', context)
+    return render(request, 'sightings/map.html', context)
