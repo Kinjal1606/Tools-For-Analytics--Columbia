@@ -13,6 +13,6 @@ def map(request):
 def list_sighting(request):
     listing = Squirrel.objects.all()
     context = {
-            'sighting': listing,
+            'sightings': listing,
         }
     return render(request, 'sightings/sightings.html',context)
