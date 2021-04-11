@@ -57,3 +57,52 @@ def list_sighting(request):
             'sighting': listing,
         }
     return render(request, 'sightings/sightings.html',context)
+
+def squirrel_stats(request): 
+    AM = 0 
+    PM = 0
+    ADULT = 0
+    JUVENILE = 0 
+    GREY = 0 
+    CINNAMON = 0 
+    BLACK = 0 
+    GROUND_PLANE = 0 
+    ABOVE_GROUND = 0 
+
+    for s in Squirrel.objects.all():
+        if s.shift == 'AM':
+            AM += 1
+        if s.shift == 'PM':
+            PM += 1 
+        if s.age == 'Adult':
+            ADULT += 1 
+        if s.age == 'Juvenile':
+            JUVENILE += 1 
+        if s.fur_color == 'Grey':
+            GREY += 1 
+        if s.fur_color == 'Cinnamon':
+            CINNAMON += 1 
+        if s.fur_color == 'Black':
+            BLACK += 1 
+        if s.location == 'Ground Plane':
+            GROUND_PLANE +=1 
+        if s.location == 'Above Ground':
+            ABOVE_GROUND += 1
+    
+    context = { 
+            'AM':AM,
+            'PM':PM, 
+            'ADULT':ADULT,
+            'JUVENILE':JUVENILE 
+            'GREY':GREY 
+            'CINNAMON':CINNAMON
+            'BLACK':BLACK 
+            'GROUND_PLANE':GROUND_PLANE
+            'ABOVE_GROUND':ABOVE_GROUND
+            }
+
+    return render(request, 'sighting/stats.html', context) 
+
+
+
+
