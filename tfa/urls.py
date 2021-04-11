@@ -20,4 +20,5 @@ from squirrel.views import index ### function
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
+    path('map/',views.map ),
 ]
