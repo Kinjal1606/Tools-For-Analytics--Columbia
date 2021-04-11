@@ -93,12 +93,12 @@ def squirrel_stats(request):
             'AM':AM,
             'PM':PM, 
             'ADULT':ADULT,
-            'JUVENILE':JUVENILE 
-            'GREY':GREY 
-            'CINNAMON':CINNAMON
-            'BLACK':BLACK 
-            'GROUND_PLANE':GROUND_PLANE
-            'ABOVE_GROUND':ABOVE_GROUND
+            'JUVENILE':JUVENILE, 
+            'GREY':GREY ,
+            'CINNAMON':CINNAMON,
+            'BLACK':BLACK ,
+            'GROUND_PLANE':GROUND_PLANE,
+            'ABOVE_GROUND':ABOVE_GROUND,
             }
 
     return render(request, 'sighting/stats.html', context) 
