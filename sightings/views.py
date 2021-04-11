@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse 
 
@@ -43,3 +44,16 @@ def squirrel_update_existing(request,unique_id):
 
 
 # Create your views here.
+def map(request):
+    sightings= Squirrel.objects.all()[:100]
+    context ={
+            'sightings':sightings,
+            }
+    return render(request, 'sightings/map.html', context)
+
+def list_sighting(request):
+    listing = Squirrel.objects.all()
+    context = {
+            'sighting': listing,
+        }
+    return render(request, 'sightings/sightings.html',context)
