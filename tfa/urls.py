@@ -22,7 +22,7 @@ urlpatterns = [
     path('map/', map),
     path('sightings/',list_sighting),
     path('sightings/add/', squirrel_add_new),
-    path('<squirrel_id>/', squirrel_update_existing),
+    path('sightings/<str:unique_id>/', squirrel_update_existing),
 
 
 ]

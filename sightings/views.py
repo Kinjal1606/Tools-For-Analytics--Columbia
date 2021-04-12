@@ -27,8 +27,8 @@ def squirrel_add_new(request):
                 }
     return render(request,'sightings/add.html',context)
 
-def squirrel_update_existing(request, squirrel_id):
-    squirrel= Squirrel.objects.get(Squirrel, unique_id=squirrel_id)
+def squirrel_update_existing(request, unique_id):
+    squirrel= Squirrel.objects.get(unique_id=unique_id)
     if request.method =='POST': 
         form = SightingsForm(request.POST, instance = squirrel)
         if form.is_valid():
