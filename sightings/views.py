@@ -1,6 +1,7 @@
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse 
+from django.http.response import JsonResponse
 
 from .models import Squirrel
 from .forms import SightingsForm
@@ -12,7 +13,7 @@ def main(request):
 def squirrel_add_new(request):
     if request.method == "POST":
         form = SightingsForm(request.POST)
-        return render(request, 'sighting/main.html')
+        #return render(request, 'sighting/main.html')
         if form.is_valid():
             form.save()
             return redirect(f'/sightings')
@@ -24,11 +25,11 @@ def squirrel_add_new(request):
         context ={
                 'form':form,
                 }
-    return render(request,'sighting/edit.html',context)
+    return render(request,'sightings/add.html',context)
 
-def squirrel_update_existing(request,unique_id):
-    squirrel= Squirrel.objects.get(unique_id=unique_id)
-    if request.method =='POST':
+def squirrel_update_existing(request, squirrel_id):
+    squirrel= Squirrel.objects.get(Squirrel, unique_id=squirrel_id)
+    if request.method =='POST': 
         form = SightingsForm(request.POST, instance = squirrel)
         if form.is_valid():
             form.save()
@@ -40,7 +41,7 @@ def squirrel_update_existing(request,unique_id):
         context ={
             'form':form,
                 }
-    return render(request, 'sighting/edit.html', context)
+    return render(request, 'sightings/edit.html', context)
 
 
 # Create your views here.
@@ -101,7 +102,7 @@ def squirrel_stats(request):
             'ABOVE_GROUND':ABOVE_GROUND,
             }
 
-    return render(request, 'sighting/stats.html', context) 
+    return render(request, 'sightings/stats.html', context) 
 
 
 
