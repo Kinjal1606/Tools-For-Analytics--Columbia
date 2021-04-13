@@ -15,15 +15,15 @@
         <div class="jumbotron">
             <div class="card">
                 <div class="card-header">
-                  <h4><a href='/sightings/add'> Add</a> </h4>
-                  List of Squirrel Sightings
+                  <h5><a href='/sightings/add'> Add</a> </h5>
+                  
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Squirrel Sightings</h5>
-                    <table class="table">
+                  <h4 class="card-title">Squirrel Sightings List</h4>
+                    <table class="table" style = "border:1px solid black;">
                         <thead class="thead-dark">
-                            <th scope="col">Unique_Squirrel_ID</th>
-                            <th scope="col">Date of Sighting</th>
+                            <th scope="col" style = "border:1px solid black;">Unique_Squirrel_ID</th>
+                            <th scope="col" style = "border:1px solid black;">Date of Sighting</th>
                             
                             {% for squirrel in sightings %}
                                 <tr>

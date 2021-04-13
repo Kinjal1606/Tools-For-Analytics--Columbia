@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from sightings.views import map, list_sighting, squirrel_add_new, squirrel_update_existing ### function
+from sightings.views import map, list_sighting, squirrel_add_new, squirrel_update_existing, squirrel_stats ### function
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,6 +23,7 @@ urlpatterns = [
     path('sightings/',list_sighting),
     path('sightings/add/', squirrel_add_new),
     path('sightings/<str:unique_id>/', squirrel_update_existing),
+    path('stats/', squirrel_stats)
 
 
 ]

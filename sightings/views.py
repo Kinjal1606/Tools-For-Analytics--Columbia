@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse 
 from django.http.response import JsonResponse
-
+from django.db.models import Avg, Max, Min, Count
 from .models import Squirrel
 from .forms import SightingsForm
 
@@ -69,8 +69,10 @@ def squirrel_stats(request):
     BLACK = 0 
     GROUND_PLANE = 0 
     ABOVE_GROUND = 0 
+    TOTAL=0
 
     for s in Squirrel.objects.all():
+        TOTAL += 1
         if s.shift == 'AM':
             AM += 1
         if s.shift == 'PM':
@@ -89,10 +91,16 @@ def squirrel_stats(request):
             GROUND_PLANE +=1 
         if s.location == 'Above Ground':
             ABOVE_GROUND += 1
-    
-    context = { 
+    LATITUDE = Squirrel.objects.all().aggregate(minimum=Min('lat'),maximum=Max('lat'))
+    LONGITUDE = Squirrel.objects.all().aggregate(minimum=Min('lon'),maximum=Max('lon'))
+    ADULT=round(ADULT*100/ (ADULT+JUVENILE), 2)
+    JUVENILE=round(100-ADULT, 2)
+    context = {
+            'TOTAL':TOTAL, 
             'AM':AM,
             'PM':PM, 
+            'LATITUDE':LATITUDE,
+            'LONGITUDE':LONGITUDE,
             'ADULT':ADULT,
             'JUVENILE':JUVENILE, 
             'GREY':GREY ,

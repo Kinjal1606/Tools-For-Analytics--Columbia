@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="card">
+                <div class="card-header">                  
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title"><strong>Statistics</strong></h4>
+
+                    <li>We have a total of <font color="red"><b>{{TOTAL}}</b></font> sightings of squirrels distributed among the following:</li>
+                    <br>
+                    <strong>Geographic Bounds</strong>
+                    <li>Range of Latitude: (<font color="red"><b>{{LATITUDE.minimum}}</b></font>, <font color="red"><b>{{LATITUDE.maximum}}</b></font>)
+                    
+                    <li>Range of Longitude：(<font color="red"><b>{{LONGITUDE.minimum}}</b></font>, <font color="red"><b>{{LONGITUDE.maximum}}</b></font>)</li>
+                    
+                    <br>
+                    <strong>Shift of observations</strong>
+                    <li>AM: There are <font color="red"><b>{{AM}}</b></font> observations before noon </li>
+                    <li>PM: There are <font color="red"><b>{{PM}}</b></font>  observations after noon </li>
+                    <br>
+                    <strong>Age of Squirrels</strong>
+                    <li>Adult: There are <font color="red"><b>{{ADULT}}%</b></font>  adult squirrels of the ones whose ages are known </li>
+                    <li>Juvenile: There are <font color="red"><b>{{JUVENILE}}%</b></font>  juvenile squirrels of the ones whose ages are known </li>
+                    <br>
+                    <strong>Ground Location</strong>
+                    <li>Ground Plane: <font color="red"><b>{{GROUND_PLANE}}</b></font> </li>
+                    <li>Above Ground: <font color="red"><b>{{ABOVE_GROUND}}</b></font> </li></ul>
+                    <br>
+                    <strong>Primary Fur Color</strong>
+                    <li>Grey: <font color="red"><b>{{GREY}}</b></font> </li>
+                    <li>Cinnamon: <font color="red"><b>{{CINNAMON}}</b></font> </li>
+                    <li>Black: <font color="red"><b>{{BLACK}}</b></font> </li>
+                    <br>
+
+
+                </div>
+              </div>
+
+        </div>
+    </div>
+</body>
+</html>
