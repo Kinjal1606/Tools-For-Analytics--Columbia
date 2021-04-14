@@ -15,10 +15,10 @@ Export: A command that can be used to export the data in CSV format. The file pa
 $ python manage.py export_squirrel_data /path/to/file.csv
 
 Map: 
-A view to show the location of squirrel sightings on an OpenStreets map is located at \map
+A view to show the location of squirrel sightings on an OpenStreets map is located at /map
 
 List: 
-List of all squirrel sightings with links to view each sighting is available and located at \sightings 
+List of all squirrel sightings with links to view each sighting is available and located at /sightings 
 
 Update: 
 Sightings of a particular squirrel can be updated and located at /sightings/<unique-squirrel-id>
@@ -29,8 +29,6 @@ New squirrels sighted  can be added and located at /sightings/add
 Stats: 
 General stats about the squirrel sightings are available at /sightings/stats
 
-Website: 
-https://tfa-2021-spring-nh2675.uk.r.appspot.com/
  
 
 
